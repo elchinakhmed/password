@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://kit.fontawesome.com/e544176738.js" crossorigin="anonymous"></script>
+    <style>
+        input {
+            width: 200px;
+            height: 30px;
+        }
+
+        button {
+            background: none;
+            border: none;
+            outline: none;
+        }
+
+        i {
+            position: relative;
+            top: 5px;
+            font-size: 30px;
+        }
+        .red {
+            color: red;
+        }
+        .yellow {
+            color: yellow;
+        }
+        .green {
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <input type="password" placeholder="password..." id="myInput">
+    <button><i id="pass-status" class="far fa-eye-slash" onclick="show()"></i></button><br />
+    <div id="secure"></div>
+    <script>
+        function show() {
+            let n = document.getElementById('pass-status');
+            let x = document.getElementById("myInput");
+            if (x.type === "password") {
+                x.type = "text";
+                n.className = 'fa fa-eye-slash';
+
+            }
+            else {
+                x.type = "password";
+                n.className = 'fa fa-eye';
+            }
+
+        }
+        myInput.onkeyup = function () {
+            let c = document.getElementById("secure");
+            if (myInput.value.length >= 8) {
+                document.getElementById("secure").innerText = "High secure key";
+                c.className = 'fas fa-key green'
+            }
+            else if (myInput.value.length >= 6) {
+                document.getElementById("secure").innerText = "Medium secure key";
+                c.className = 'fas fa-key yellow'
+            }
+            else {
+                document.getElementById("secure").innerText = "Low secure key";
+                c.className = 'fas fa-key red'
+            }
+        }
+    </script>
+
+</body>
+
+</html>
