@@ -2,6 +2,7 @@
 body {
     background-image: url(img/back.jpg);
     background-size: 100%, 100%;
+    background-repeat: no-repeat;
 }
 
 #login {
@@ -75,6 +76,7 @@ button:hover {
     color: #fff;
     transform: translateY(-7px);
 }
+
 img {
     display: block;
     margin: auto;
@@ -82,19 +84,29 @@ img {
     height: auto;
     margin-top: 15px;
 }
+
 h2 {
     font: 500 2em 'Open Sans', sans-serif;
     color: white;
 }
+
 #text {
     display: block;
     margin: auto;
     margin-top: 5px;
     width: 125px;
 }
+
 #secure {
     font: 300 1em 'Open Sans', sans-serif;
     color: white;
     height: 20px;
     margin-top: 5px;
+    margin-left: 5px;
+}
+
+@media only screen and (max-width: 992px) {
+    body {
+        background-size: 230%, 100%;
+    }
 }
